@@ -1,8 +1,19 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <grille.h>
+#include <iostream>
+using namespace std;
 
 int main(int argc, char *argv[])
 {
+    grille G;
+    cout<<G;
+    G.initial();
+    cout<<G;
+
+
+
+
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
@@ -17,4 +28,5 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     return app.exec();
+
 }
