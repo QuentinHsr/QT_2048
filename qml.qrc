@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>bloc_2.qml</file>
+        <file>bloc_4.qml</file>
+        <file>bloc_8.qml</file>
+        <file>bloc_16.qml</file>
     </qresource>
 </RCC>
