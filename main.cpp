@@ -1,8 +1,24 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <grille.h>
+#include <iostream>
+using namespace std;
+
 
 int main(int argc, char *argv[])
 {
+    // tests préliminaires sur la grille et son fonctionnement
+    grille G;
+    G.initial();
+    cout<<G<<endl;
+    cout<<"test1313";
+    G.maj();
+    cout<<G<<endl;
+    G.affiche_cases_vides();
+
+
+
+
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
