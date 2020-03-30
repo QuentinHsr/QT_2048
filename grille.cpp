@@ -67,7 +67,6 @@ for (int i=0;i<4;i++)
         c=0;
         while((test==0) && c<=4)
         {    c = c + 1;
-             cout<<c;
                 if(tab[i][j]==0)   //déplacement des cases (hors fusion) on retire tous les "0" ie toutes les cases vides avant de fusionner
                 {
                 for(int k=j+1;k<4;k++)
@@ -96,7 +95,122 @@ for (int i=0;i<4;i++)
 
 }
 
+void grille::move_up()
+{int c = 0;
+bool test = 0;
 
+for (int i=0;i<4;i++)
+    {
+    for(int j=0;j<3;j++)
+    {   test=0;
+        c=0;
+        while((test==0) && c<=4)
+        {    c = c + 1;
+                if(tab[j][i]==0)   //déplacement des cases (hors fusion) on retire tous les "0" ie toutes les cases vides avant de fusionner
+                {
+                for(int k=j+1;k<4;k++)
+                 {int val = tab[k][i];
+                  tab[k-1][i]=val;
+                 }
+                tab[3][i] = 0;
+                 }
+            else {test=1;}
+         }
+    }
+    for(int j=0;j<3;j++)        // fusion des cases 2 à 2
+    {
+        if(tab[j][i]==tab[j+1][i] and tab[j][i]!=0)
+            {   int v2=tab[j][i];
+
+                tab[j][i] = 2*v2;
+                tab[j+1][i] = 0;
+              for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
+                 {tab[k][i]=tab[k+1][i];
+                 }
+               tab[3][i] = 0;
+           }
+    }
+    }
+
+}
+
+void grille::move_down()    // ça marche pas encore
+{int c = 0;
+bool test = 0;
+
+for (int i=0;i<4;i++)
+    {
+    for(int j=0;j<3;j++)
+    {   test=0;
+        c=0;
+        while((test==0) && c<=4)
+        {    c = c + 1;
+                if(tab[j][i]==0)   //déplacement des cases (hors fusion) on retire tous les "0" ie toutes les cases vides avant de fusionner
+                {
+                for(int k=j+1;k<4;k++)
+                 {int val = tab[k][i];
+                  tab[k+1][i]=val;
+                 }
+                tab[0][i] = 0;
+                 }
+            else {test=1;}
+         }
+    }
+    for(int j=0;j<3;j++)        // fusion des cases 2 à 2
+    {
+        if(tab[j][i]==tab[j+1][i] and tab[j][i]!=0)
+            {   int v2=tab[j][i];
+
+                tab[j][i] = 0;
+                tab[j+1][i] =2*v2;
+              for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
+                 {tab[k][i]=tab[k+1][i];
+                 }
+               tab[0][i] = 0;
+           }
+    }
+    }
+
+}
+
+void grille::move_right()    // ça marche pas encore
+{int c = 0;
+bool test = 0;
+
+for (int i=0;i<4;i++)
+    {
+    for(int j=0;j<3;j++)
+    {   test=0;
+        c=0;
+        while((test==0) && c<=4)
+        {    c = c + 1;
+                if(tab[j][i]==0)   //déplacement des cases (hors fusion) on retire tous les "0" ie toutes les cases vides avant de fusionner
+                {
+                for(int k=j+1;k<4;k++)
+                 {int val = tab[k][i];
+                  tab[k+1][i]=val;
+                 }
+                tab[0][i] = 0;
+                 }
+            else {test=1;}
+         }
+    }
+    for(int j=0;j<3;j++)        // fusion des cases 2 à 2
+    {
+        if(tab[j][i]==tab[j+1][i] and tab[j][i]!=0)
+            {   int v2=tab[j][i];
+
+                tab[j][i] = 0;
+                tab[j+1][i] =2*v2;
+              for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
+                 {tab[k][i]=tab[k+1][i];
+                 }
+               tab[0][i] = 0;
+           }
+    }
+    }
+
+}
 
 void grille::calcul_cases_vides()
 {
