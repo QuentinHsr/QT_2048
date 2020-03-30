@@ -45,7 +45,8 @@ void grille::initial()
 }
 
 void grille::maj()
-{ int l=cases_vides.size();
+{ this->calcul_cases_vides();
+  int l=cases_vides.size();
   int r = rand() % l;
 
   int i =cases_vides[r][0];
@@ -54,6 +55,48 @@ void grille::maj()
   tab[i][j]=2;
 
 }
+
+void grille::move_left()
+{int c = 0;
+bool test = 0;
+
+for (int i=0;i<4;i++)
+    {
+    for(int j=0;j<3;j++)
+    {   test=0;
+        c=0;
+        while((test==0) && c<=4)
+        {    c = c + 1;
+             cout<<c;
+                if(tab[i][j]==0)   //déplacement des cases (hors fusion) on retire tous les "0" ie toutes les cases vides avant de fusionner
+                {
+                for(int k=j+1;k<4;k++)
+                 {int val = tab[i][k];
+                  tab[i][k-1]=val;
+                 }
+                tab[i][3] = 0;
+                 }
+            else {test=1;}
+         }
+    }
+    for(int j=0;j<3;j++)        // fusion des cases 2 à 2
+    {
+        if(tab[i][j]==tab[i][j+1] and tab[i][j]!=0)
+            {   int v2=tab[i][j];
+
+                tab[i][j] = 2*v2;
+                tab[i][j+1] = 0;
+              for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
+                 {tab[i][k]=tab[i][k+1];
+                 }
+               tab[i][3] = 0;
+           }
+    }
+    }
+
+}
+
+
 
 void grille::calcul_cases_vides()
 {
@@ -88,6 +131,7 @@ bool grille::est_pleine()
     return (cases_vides.empty());
 
 }
+
 ostream& operator<<(ostream& sortie, grille& g)
  {
      cout<<endl;
