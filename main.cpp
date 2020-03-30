@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main(int argc, char *argv[])
-{
+{   srand(time(0));
     // tests préliminaires sur la grille et son fonctionnement
     grille G;
     G.initial();

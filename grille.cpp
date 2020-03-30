@@ -1,7 +1,9 @@
 #include "grille.h"
 #include <random>
 #include <vector>
-#include "cstdlib"
+
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 grille::grille()
@@ -25,7 +27,6 @@ void grille::initial()
  int x2 = rand() % 4;
  int y1 = rand() % 4;
  int y2 = rand() % 4;
-
  tab[x1][y1]=2;
  tab[x2][y2]=2;
 
@@ -46,10 +47,10 @@ void grille::initial()
 
 void grille::maj()
 {
-  int x1 = rand()%4;
-  int x2 = rand()%4;
-  int y1 = rand()%4;
-  int y2 = rand()%4;
+  int x1 = rand() % 4;
+  int x2 = rand() % 4;
+  int y1 = rand() % 4;
+  int y2 = rand() % 4;
   int l=cases_vides.size();
 
 
@@ -64,10 +65,10 @@ for(int k=0;k<l;k++)
 
       }
 
-//     else if (i==x2 and j==y2)                  // problème avec ce elif
-//       {   tab[x2][y2]=2;
-//            cases_vides.erase(cases_vides.begin()+k);
-//        }
+     else if (i==x2 and j==y2)                  // problème avec ce elif
+       {   tab[x2][y2]=2;
+           cases_vides.erase(cases_vides.begin()+k);
+       }
 
     }
 }
