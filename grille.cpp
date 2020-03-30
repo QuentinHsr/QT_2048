@@ -49,7 +49,7 @@ void grille::maj()
   int r = rand() % l;
 
   int i =cases_vides[r][0];
-  int j =cases_vides[r][0];
+  int j =cases_vides[r][1];
 
   tab[i][j]=2;
 
@@ -79,17 +79,14 @@ void grille::affiche_cases_vides()
     for(int k=0;k<l;k++)
     {int i = cases_vides[k][0];
      int j = cases_vides[k][1];
-
-        cout<<"("<<i<<";"<<j<<")"<<endl;
+     cout<<"("<<i<<";"<<j<<")"<<endl;
     }
 }
 
 bool grille::est_pleine()
 {   this->calcul_cases_vides();
-    int l=cases_vides.size();
-    if (l==0)
-    {return 1;}
-    else {return 0;}
+    return (cases_vides.empty());
+
 }
 ostream& operator<<(ostream& sortie, grille& g)
  {
