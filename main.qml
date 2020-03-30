@@ -5,6 +5,7 @@ Window {
     visible: true
     width: 290
     height: 400
+    property alias case00Text: case00.text
     title: qsTr("Hello World")
 
 
@@ -27,6 +28,18 @@ Window {
         color: "#e4e4e4"
         border.color: "#9a9898"
         border.width: 2
+
+        Text {
+            id: case00
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: 12
+        }
     }
 
     Rectangle {
@@ -153,7 +166,7 @@ Window {
     Rectangle {
         id: carre13
         x: 10
-        y: 250
+        y: 252
         width: 60
         height: 60
         color: "#e4e4e4"
@@ -164,7 +177,7 @@ Window {
     Rectangle {
         id: carre14
         x: 80
-        y: 250
+        y: 252
         width: 60
         height: 60
         color: "#e4e4e4"
@@ -175,7 +188,7 @@ Window {
     Rectangle {
         id: carre15
         x: 150
-        y: 250
+        y: 252
         width: 60
         height: 60
         color: "#e4e4e4"
@@ -186,7 +199,7 @@ Window {
     Rectangle {
         id: carre16
         x: 220
-        y: 250
+        y: 252
         width: 60
         height: 60
         color: "#e4e4e4"
