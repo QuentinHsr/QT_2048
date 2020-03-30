@@ -27,6 +27,7 @@ public:
     void maj();
     friend ostream& operator<<(ostream& sortie, grille& D);
     void affiche_cases_vides();
+    void calcul_cases_vides();
 };
 
 #endif // GRILLE_H

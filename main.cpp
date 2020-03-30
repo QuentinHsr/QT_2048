@@ -10,15 +10,14 @@ int main(int argc, char *argv[])
     // tests préliminaires sur la grille et son fonctionnement
     grille G;
     G.initial();
+    while(not(G.est_pleine()))
+    {
     cout<<G<<endl;
-    cout<<"test1313";
+    G.calcul_cases_vides();
     G.maj();
+    }
+
     cout<<G<<endl;
-    G.affiche_cases_vides();
-
-
-
-
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
