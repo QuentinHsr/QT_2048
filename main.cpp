@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
     G.initial();
     cout<<G<<endl;
     int compteur=0;
-    while(G.est_pleine()==0 and compteur<=10)
+    while(G.est_pleine()==0 and compteur<=5)
     {compteur+=1;
-    G.move_down();
+    G.move_right();
     cout<<G<<endl;
     G.maj();
     cout<<G<<endl;

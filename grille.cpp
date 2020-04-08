@@ -134,39 +134,39 @@ for (int i=0;i<4;i++)
 
 }
 
-void grille::move_down()    // ça marche pas encore
+void grille::move_down()
 {int c = 0;
 bool test = 0;
 
 for (int i=0;i<4;i++)
     {
-    for(int j=0;j<3;j++)
+    for(int j=3;j>0;j--)
     {   test=0;
         c=0;
-        while((test==0) && c<=4)
+        while((test==0) && c<4)
         {    c = c + 1;
                 if(tab[j][i]==0)   //déplacement des cases (hors fusion) on retire tous les "0" ie toutes les cases vides avant de fusionner
                 {
-                for(int k=j+1;k<4;k++)
-                 {int val = tab[k][i];
-                  tab[k+1][i]=val;
+                for(int k=j;k>0;k--)
+                 {int val = tab[k-1][i];
+                  tab[k][i]=val;
                  }
                 tab[0][i] = 0;
                  }
             else {test=1;}
          }
     }
-    for(int j=0;j<3;j++)        // fusion des cases 2 à 2
+    for(int j=3;j>0;j--)        // fusion des cases 2 à 2
     {
-        if(tab[j][i]==tab[j+1][i] and tab[j][i]!=0)
+        if(tab[j][i]==tab[j-1][i] and tab[j][i]!=0)
             {   int v2=tab[j][i];
 
-                tab[j][i] = 0;
-                tab[j+1][i] =2*v2;
-              for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
-                 {tab[k][i]=tab[k+1][i];
-                 }
-               tab[0][i] = 0;
+                tab[j-1][i] = 0;
+                tab[j][i] =2*v2;
+              for(int k=j-1;k>0;k--) //après la fusion on redéplace pour combler le vide
+                 {tab[k][i]=tab[k-1][i];
+                }
+              tab[0][i] = 0;
            }
     }
     }
@@ -179,33 +179,33 @@ bool test = 0;
 
 for (int i=0;i<4;i++)
     {
-    for(int j=0;j<3;j++)
+    for(int j=3;j>0;j--)
     {   test=0;
         c=0;
         while((test==0) && c<=4)
         {    c = c + 1;
-                if(tab[j][i]==0)   //déplacement des cases (hors fusion) on retire tous les "0" ie toutes les cases vides avant de fusionner
+                if(tab[i][j]==0)   //déplacement des cases (hors fusion) on retire tous les "0" ie toutes les cases vides avant de fusionner
                 {
-                for(int k=j+1;k<4;k++)
-                 {int val = tab[k][i];
-                  tab[k+1][i]=val;
+                for(int k=j;k>0;k--)
+                 {int val = tab[i][k-1];
+                  tab[i][k]=val;
                  }
-                tab[0][i] = 0;
+                tab[i][0] = 0;
                  }
             else {test=1;}
          }
     }
-    for(int j=0;j<3;j++)        // fusion des cases 2 à 2
+    for(int j=3;j>0;j--)        // fusion des cases 2 à 2
     {
-        if(tab[j][i]==tab[j+1][i] and tab[j][i]!=0)
-            {   int v2=tab[j][i];
+        if(tab[i][j]==tab[i][j-1] and tab[i][j]!=0)
+            {   int v2=tab[i][j];
 
-                tab[j][i] = 0;
-                tab[j+1][i] =2*v2;
-              for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
-                 {tab[k][i]=tab[k+1][i];
+                tab[i][j-1] = 0;
+                tab[i][j] =2*v2;
+              for(int k=j-1;k>0;k--) //après la fusion on redéplace pour combler le vide
+                 {tab[i][k]=tab[i][k-1];
                  }
-               tab[0][i] = 0;
+               tab[i][0] = 0;
            }
     }
     }
