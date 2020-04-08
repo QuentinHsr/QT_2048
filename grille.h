@@ -14,15 +14,15 @@ protected:
                                // cela permet une plus grande simplicité et une meilleur lisibilité du code.
     int a=2;
     vector<vector<int>> cases_vides;
-
+    vector<short> memoire;
 public:
 
     grille();
     bool est_pleine();
-    void move_right();
-    void move_left();
-    void move_up();
-    void move_down();
+    bool move_right();
+    bool move_left();
+    bool move_up();
+    bool move_down();
     void initial();
     void maj();
     friend ostream& operator<<(ostream& sortie, grille& D);

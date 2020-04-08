@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <grille.h>
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 
@@ -9,16 +10,33 @@ int main(int argc, char *argv[])
 {   srand(time(0));
     // tests préliminaires sur la grille et son fonctionnement
     grille G;
+    char x;
     G.initial();
     cout<<G<<endl;
     int compteur=0;
-    while(G.est_pleine()==0 and compteur<=5)
+    while(G.est_pleine()==0 and compteur<=20)// '0' correspond ici à False
     {compteur+=1;
-    G.move_right();
-    cout<<G<<endl;
-    G.maj();
-    cout<<G<<endl;
+     x=getchar();
+    if (x=='z'){
+        G.move_up();
+        G.maj();
+        cout<<G<<endl;
     }
+    if (x=='s'){
+       G.move_down();
+       G.maj();
+       cout<<G<<endl;
+    }
+    if (x=='q'){
+      G.move_left();
+      G.maj();
+      cout<<G<<endl;}
+    if (x=='d'){
+        G.move_right();
+        G.maj();
+        cout<<G<<endl;
+    }
+    cout<<G<<endl;
 
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -35,4 +53,5 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     return app.exec();
+}
 }

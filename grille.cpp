@@ -56,9 +56,10 @@ void grille::maj()
 
 }
 
-void grille::move_left()
+bool grille::move_left()
 {int c = 0;
 bool test = 0;
+bool a_bouge= 0;
 
 for (int i=0;i<4;i++)
     {
@@ -72,6 +73,7 @@ for (int i=0;i<4;i++)
                 for(int k=j+1;k<4;k++)
                  {int val = tab[i][k];
                   tab[i][k-1]=val;
+                  a_bouge=1;
                  }
                 tab[i][3] = 0;
                  }
@@ -82,23 +84,24 @@ for (int i=0;i<4;i++)
     {
         if(tab[i][j]==tab[i][j+1] and tab[i][j]!=0)
             {   int v2=tab[i][j];
-
+                a_bouge=1;
                 tab[i][j] = 2*v2;
                 tab[i][j+1] = 0;
               for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
-                 {tab[i][k]=tab[i][k+1];
+                 {tab[i][k]=tab[i][k+1];             
+                  a_bouge=1;
                  }
                tab[i][3] = 0;
            }
     }
     }
-
+return a_bouge;
 }
 
-void grille::move_up()
+bool grille::move_up()
 {int c = 0;
 bool test = 0;
-
+bool a_bouge= 0;
 for (int i=0;i<4;i++)
     {
     for(int j=0;j<3;j++)
@@ -111,6 +114,7 @@ for (int i=0;i<4;i++)
                 for(int k=j+1;k<4;k++)
                  {int val = tab[k][i];
                   tab[k-1][i]=val;
+                  bool a_bouge= 1;
                  }
                 tab[3][i] = 0;
                  }
@@ -121,23 +125,24 @@ for (int i=0;i<4;i++)
     {
         if(tab[j][i]==tab[j+1][i] and tab[j][i]!=0)
             {   int v2=tab[j][i];
-
+                bool a_bouge= 0;
                 tab[j][i] = 2*v2;
                 tab[j+1][i] = 0;
               for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
                  {tab[k][i]=tab[k+1][i];
+                  bool a_bouge= 0;
                  }
                tab[3][i] = 0;
            }
     }
     }
-
+return a_bouge;
 }
 
-void grille::move_down()
+bool grille::move_down()
 {int c = 0;
 bool test = 0;
-
+bool a_bouge= 0;
 for (int i=0;i<4;i++)
     {
     for(int j=3;j>0;j--)
@@ -150,6 +155,7 @@ for (int i=0;i<4;i++)
                 for(int k=j;k>0;k--)
                  {int val = tab[k-1][i];
                   tab[k][i]=val;
+                  bool a_bouge= 1;
                  }
                 tab[0][i] = 0;
                  }
@@ -160,23 +166,24 @@ for (int i=0;i<4;i++)
     {
         if(tab[j][i]==tab[j-1][i] and tab[j][i]!=0)
             {   int v2=tab[j][i];
-
+                bool a_bouge= 1;
                 tab[j-1][i] = 0;
                 tab[j][i] =2*v2;
               for(int k=j-1;k>0;k--) //après la fusion on redéplace pour combler le vide
                  {tab[k][i]=tab[k-1][i];
+                  bool a_bouge= 1;
                 }
               tab[0][i] = 0;
            }
     }
     }
-
+return a_bouge;
 }
 
-void grille::move_right()    // ça marche pas encore
+bool grille::move_right()
 {int c = 0;
 bool test = 0;
-
+bool a_bouge= 0;
 for (int i=0;i<4;i++)
     {
     for(int j=3;j>0;j--)
@@ -189,6 +196,7 @@ for (int i=0;i<4;i++)
                 for(int k=j;k>0;k--)
                  {int val = tab[i][k-1];
                   tab[i][k]=val;
+                  bool a_bouge= 1;
                  }
                 tab[i][0] = 0;
                  }
@@ -199,17 +207,18 @@ for (int i=0;i<4;i++)
     {
         if(tab[i][j]==tab[i][j-1] and tab[i][j]!=0)
             {   int v2=tab[i][j];
-
+                bool a_bouge= 1;
                 tab[i][j-1] = 0;
                 tab[i][j] =2*v2;
               for(int k=j-1;k>0;k--) //après la fusion on redéplace pour combler le vide
                  {tab[i][k]=tab[i][k-1];
-                 }
+                 bool a_bouge= 1;
+              }
                tab[i][0] = 0;
            }
     }
     }
-
+return a_bouge;
 }
 
 void grille::calcul_cases_vides()
