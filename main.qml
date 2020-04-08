@@ -6,7 +6,7 @@ Window {
     width: 290
     height: 400
     property alias case00Text: case00.text
-    title: qsTr("Hello World")
+    title: qsTr("2048")
 
 
     Rectangle {
@@ -51,6 +51,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case01
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -62,6 +74,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case02
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -73,6 +97,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case03
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -84,6 +120,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case10
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -95,6 +143,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case11
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -106,6 +166,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case12
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -117,6 +189,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case13
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -128,6 +212,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case20
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -139,6 +235,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case21
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -150,6 +258,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case22
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -161,6 +281,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case23
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -172,6 +304,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case30
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -183,6 +327,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case31
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -194,6 +350,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case32
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
 
     Rectangle {
@@ -205,5 +373,18 @@ Window {
         color: "#e4e4e4"
         border.width: 2
         border.color: "#9a9898"
+
+        Text {
+            id: case33
+            x: 8
+            y: 8
+            width: 44
+            height: 44
+            text: qsTr("")
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: 12
+            horizontalAlignment: Text.AlignHCenter
+        }
     }
+
 }
