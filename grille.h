@@ -11,7 +11,9 @@ class grille : public QObject
     public:
         explicit grille(QObject *parent = nullptr);
         Q_PROPERTY(QList<QString> grilleQML READ readGrille NOTIFY grilleChanged)
+        Q_PROPERTY(QList<QString> couleurQML READ readCouleur NOTIFY grilleChanged)
         QList<QString> readGrille();
+        QList<QString> readCouleur();
         bool est_pleine();
         Q_INVOKABLE bool move_right();
         Q_INVOKABLE bool move_left();

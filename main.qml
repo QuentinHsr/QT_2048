@@ -49,7 +49,7 @@ Window {
         y: 40
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[0]
         border.color: "#9a9898"
         border.width: 2
 
@@ -73,7 +73,7 @@ Window {
         y: 40
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[1]
         border.width: 2
         border.color: "#9a9898"
 
@@ -96,7 +96,7 @@ Window {
         y: 40
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[2]
         border.width: 2
         border.color: "#9a9898"
 
@@ -119,7 +119,7 @@ Window {
         y: 40
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[3]
         border.width: 2
         border.color: "#9a9898"
 
@@ -142,7 +142,7 @@ Window {
         y: 110
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[4]
         border.width: 2
         border.color: "#9a9898"
 
@@ -165,7 +165,7 @@ Window {
         y: 110
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[5]
         border.width: 2
         border.color: "#9a9898"
 
@@ -188,7 +188,7 @@ Window {
         y: 110
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[6]
         border.width: 2
         border.color: "#9a9898"
 
@@ -211,7 +211,7 @@ Window {
         y: 110
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[7]
         border.width: 2
         border.color: "#9a9898"
 
@@ -234,7 +234,7 @@ Window {
         y: 180
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[8]
         border.width: 2
         border.color: "#9a9898"
 
@@ -257,7 +257,7 @@ Window {
         y: 180
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[9]
         border.width: 2
         border.color: "#9a9898"
 
@@ -280,7 +280,7 @@ Window {
         y: 180
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[10]
         border.width: 2
         border.color: "#9a9898"
 
@@ -303,7 +303,7 @@ Window {
         y: 180
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[11]
         border.width: 2
         border.color: "#9a9898"
 
@@ -326,7 +326,7 @@ Window {
         y: 252
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[12]
         border.width: 2
         border.color: "#9a9898"
 
@@ -349,7 +349,7 @@ Window {
         y: 252
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[13]
         border.width: 2
         border.color: "#9a9898"
 
@@ -372,7 +372,7 @@ Window {
         y: 252
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[14]
         border.width: 2
         border.color: "#9a9898"
 
@@ -395,7 +395,7 @@ Window {
         y: 252
         width: 60
         height: 60
-        color: "#e4e4e4"
+        color: vueObjetCpt.couleurQML[15]
         border.width: 2
         border.color: "#9a9898"
 

@@ -269,7 +269,29 @@ QList<QString> grille::readGrille()
 {   QList<QString> tableaulinearise;
     for (int i = 0; i < 4; i++){
         for (int j = 0; j < 4; j++){
-           tableaulinearise.append(QString::number(tab[i][j]));
+            if(tab[i][j]!=0)
+            {tableaulinearise.append(QString::number(tab[i][j]));}
+            else
+            {tableaulinearise.append(QString(""));}
+        }
+        }
+    return(tableaulinearise);
+}
+QList<QString> grille::readCouleur()
+{   QList<QString> tableaulinearise;
+    for (int i = 0; i < 4; i++){
+        for (int j = 0; j < 4; j++){
+            if(tab[i][j]==0)
+            {tableaulinearise.append(QString("#e4e4e4"));}
+            else if(tab[i][j]==2)
+            {tableaulinearise.append(QString("#ece6cf"));}
+            else if(tab[i][j]==4)
+            {tableaulinearise.append(QString("#e4d9ac"));}
+            else if(tab[i][j]==8)
+            {tableaulinearise.append(QString("#e9cd5a"));}
+            else if(tab[i][j]==16)
+            {tableaulinearise.append(QString("#f7ea2e"));}
+
         }
         }
     return(tableaulinearise);
