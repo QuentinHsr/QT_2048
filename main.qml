@@ -24,20 +24,20 @@ Window {
          vueObjetCpt.initial();
          break;
          case Qt.Key_Z:
-         vueObjetCpt.move_up();
-         vueObjetCpt.maj();
+         if(vueObjetCpt.move_up()==1)
+         {vueObjetCpt.maj();}
          break;
          case Qt.Key_Q:
-         vueObjetCpt.move_left();
-         vueObjetCpt.maj();
+         if(vueObjetCpt.move_left()==1)
+         {vueObjetCpt.maj();}
          break;
          case Qt.Key_D:
-         vueObjetCpt.move_right();
-         vueObjetCpt.maj();
+         if(vueObjetCpt.move_right()==1)
+         {vueObjetCpt.maj();}
          break;
          case Qt.Key_S:
-         vueObjetCpt.move_down();
-         vueObjetCpt.maj();
+         if(vueObjetCpt.move_down()==1)
+         {vueObjetCpt.maj();}
          break;
 
 
