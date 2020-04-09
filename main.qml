@@ -434,8 +434,8 @@ Window {
 
         Text {
             id: element
-            x: 68
-            y: 364
+            x: 74
+            y: 344
             width: 154
             height: 14
             text: qsTr("Press P to start the game")
@@ -574,11 +574,71 @@ Window {
 
         Rectangle {
             id: rectangle4
-            x: 10
-            y: 399
+            x: 9
+            y: 442
             width: 272
             height: 4
             color: "#d9883f"
+        }
+
+        Rectangle {
+            id: rectangle5
+            x: 10
+            y: 379
+            width: 272
+            height: 4
+            color: "#d9883f"
+        }
+
+        Rectangle {
+            id: bout1
+            x: 23
+            y: 395
+            width: 110
+            height: 35
+            color: "#f1d68e"
+            radius: 17.5
+            MouseArea{
+                 anchors.fill: parent
+                 onClicked: {
+                 vueObjetCpt.set_difficulty(0);
+                 bout1.color = "#b4d9ff";
+                 }
+            }
+
+            Text {
+                id: element9
+                x: 30
+                y: 11
+                text: qsTr("NORMAL")
+                font.family: "Verdana"
+                font.pixelSize: 12
+            }
+        }
+
+        Rectangle {
+            id: bout2
+            x: 152
+            y: 395
+            width: 108
+            height: 35
+            color: "#e8796c"
+            radius: 17.5
+            MouseArea{
+                 anchors.fill: parent
+                 onClicked: {
+                 vueObjetCpt.set_difficulty(1);
+
+                 bout2.color = "#b4d9ff";
+                 }
+            }
+            Text {
+                id: element10
+                x: 39
+                y: 11
+                text: qsTr("HARD")
+                font.pixelSize: 12
+            }
         }
     }
 }

@@ -68,12 +68,16 @@ void grille::maj()
   if(val==0)
   {tab[i][j]=4;}
   else if(val==1)
-    {tab[i][j]=3;}
+    {if (d==0){tab[i][j]=2;}
+     else {tab[i][j]=3;}
+      }
   else
   {tab[i][j]=2;}
   memoire.push_back(tab);
 emit grilleChanged();
+
 }
+
 void grille::retour()
 {
     vector<vector<int>> tableau = memoire.back();
@@ -380,3 +384,22 @@ ostream& operator<<(ostream& sortie, grille& g)
 
 }
 
+void grille::set_difficulty(int new_d)
+{
+    d = new_d;
+    for(int i=0;i<4;i++){
+        for(int j=0; j<4; j++){
+        tab[i][j]=0;
+
+        }
+     }
+    memoire.clear();
+    emit grilleChanged();
+
+}
+
+
+int grille::get_difficulty(){
+  cout<<d;
+  return d;
+}

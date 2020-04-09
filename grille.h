@@ -22,10 +22,12 @@ class grille : public QObject
         Q_INVOKABLE void initial();
        Q_INVOKABLE void maj();
         Q_INVOKABLE void retour();
+        Q_INVOKABLE void set_difficulty(int new_d);
         friend ostream& operator<<(ostream& sortie, grille& D);
         void affiche_cases_vides();
         void calcul_cases_vides();
         vector<int> etat_tab();
+        int get_difficulty();
 
     signals:
         void grilleChanged();
@@ -37,7 +39,7 @@ class grille : public QObject
         int a=2;
         vector<vector<int>> cases_vides;
         vector<vector<vector<int>>> memoire;
-
+        int d=0;
 
 
 
