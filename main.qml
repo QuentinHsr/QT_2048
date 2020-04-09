@@ -18,7 +18,30 @@ Window {
         color: "#fcf3e1"
         border.width: 0
         focus: true
+        Keys.onPressed: {
+         switch (event.key) {
+         case Qt.Key_P:
+         vueObjetCpt.initial();
+         break;
+         case Qt.Key_Z:
+         vueObjetCpt.move_up();
+         vueObjetCpt.maj();
+         break;
+         case Qt.Key_Q:
+         vueObjetCpt.move_left();
+         vueObjetCpt.maj();
+         break;
+         case Qt.Key_D:
+         vueObjetCpt.move_right();
+         vueObjetCpt.maj();
+         break;
+         case Qt.Key_S:
+         vueObjetCpt.move_down();
+         vueObjetCpt.maj();
+         break;
 
+
+         }}
 
     Rectangle {
         id: carre1
@@ -36,7 +59,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[0]
+            text: vueObjetCpt.grilleQML[0]
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 12
@@ -60,7 +83,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[1]
+            text: vueObjetCpt.grilleQML[1]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -83,7 +106,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[2]
+            text: vueObjetCpt.grilleQML[2]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -106,7 +129,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[3]
+            text: vueObjetCpt.grilleQML[3]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -129,7 +152,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[4]
+            text: vueObjetCpt.grilleQML[4]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -152,7 +175,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[5]
+            text: vueObjetCpt.grilleQML[5]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -175,7 +198,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[6]
+            text: vueObjetCpt.grilleQML[6]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -198,7 +221,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[7]
+            text: vueObjetCpt.grilleQML[7]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -221,7 +244,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[8]
+            text: vueObjetCpt.grilleQML[8]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -244,7 +267,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[9]
+            text: vueObjetCpt.grilleQML[9]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -267,7 +290,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[10]
+            text: vueObjetCpt.grilleQML[10]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -290,7 +313,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[11]
+            text: vueObjetCpt.grilleQML[11]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -313,7 +336,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[12]
+            text: vueObjetCpt.grilleQML[12]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -336,7 +359,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[13]
+            text: vueObjetCpt.grilleQML[13]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -359,7 +382,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[14]
+            text: vueObjetCpt.grilleQML[14]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -382,7 +405,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: vueObjetCpt.cptQML[15]
+            text: vueObjetCpt.grilleQML[15]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter

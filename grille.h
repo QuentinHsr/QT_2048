@@ -13,12 +13,12 @@ class grille : public QObject
         Q_PROPERTY(QList<QString> grilleQML READ readGrille NOTIFY grilleChanged)
         QList<QString> readGrille();
         bool est_pleine();
-        bool move_right();
-        bool move_left();
-        bool move_up();
-        bool move_down();
-        void initial();
-        void maj();
+        Q_INVOKABLE bool move_right();
+        Q_INVOKABLE bool move_left();
+       Q_INVOKABLE bool move_up();
+       Q_INVOKABLE bool move_down();
+        Q_INVOKABLE void initial();
+       Q_INVOKABLE void maj();
         friend ostream& operator<<(ostream& sortie, grille& D);
         void affiche_cases_vides();
         void calcul_cases_vides();
