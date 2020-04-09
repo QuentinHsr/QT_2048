@@ -1,3 +1,4 @@
+#include <QtQml>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <grille.h>
@@ -9,27 +10,19 @@ using namespace std;
 int main(int argc, char *argv[])
 {   srand(time(0));
     // tests préliminaires sur la grille et son fonctionnement
-    grille G;
-    char x;
-    G.initial();
-    cout<<G<<endl;
-    int compteur=0;
-    while(G.est_pleine()==0 and compteur<=20)// '0' correspond ici à False
-    {compteur+=1;
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    QGuiApplication app(argc, argv);
+        QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-    engine.load(url);
+        QQmlApplicationEngine engine;
+
+        grille Gri;
+        engine.rootContext()->setContextProperty("vueObjetCpt",&Gri);
+
+    const QUrl mainQml(QStringLiteral("qrc:/main.qml"));
+    engine.load(mainQml);
 
     return app.exec();
-}
+
 }

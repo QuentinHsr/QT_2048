@@ -6,17 +6,20 @@
 #include <cstdlib>
 using namespace std;
 
-grille::grille()
+grille::grille(QObject *parent) : QObject(parent)
 { for(int i=0; i<4;i++){
+        vector<int> colonne;
         for(int j=0; j<4; j++)
         {
-            tab[i][j]=0;
+            colonne.push_back(0);
             vector<int> w;
             w.push_back(i);
             w.push_back(j);
             cases_vides.push_back(w);
         }
+        tab.push_back(colonne);
     }
+    emit grilleChanged();
 }
 
 void grille::initial()
@@ -42,6 +45,7 @@ void grille::initial()
          }
     }
 }
+ emit grilleChanged();
 }
 
 void grille::maj()
@@ -53,7 +57,7 @@ void grille::maj()
   int j =cases_vides[r][1];
 
   tab[i][j]=2;
-
+emit grilleChanged();
 }
 
 bool grille::move_left()
@@ -95,6 +99,7 @@ for (int i=0;i<4;i++)
            }
     }
     }
+emit grilleChanged();
 return a_bouge;
 }
 
@@ -136,7 +141,9 @@ for (int i=0;i<4;i++)
            }
     }
     }
+
 return a_bouge;
+emit grilleChanged();
 }
 
 bool grille::move_down()
@@ -177,7 +184,9 @@ for (int i=0;i<4;i++)
            }
     }
     }
+
 return a_bouge;
+emit grilleChanged();
 }
 
 bool grille::move_right()
@@ -218,7 +227,9 @@ for (int i=0;i<4;i++)
            }
     }
     }
+
 return a_bouge;
+emit grilleChanged();
 }
 
 void grille::calcul_cases_vides()
@@ -254,7 +265,24 @@ bool grille::est_pleine()
     return (cases_vides.empty());
 
 }
-
+QList<QString> grille::readGrille()
+{   QList<QString> tableaulinearise;
+    for (int i = 0; i < 4; i++){
+        for (int j = 0; j < 4; j++){
+           tableaulinearise.append(QString::number(tab[i][j]));
+        }
+        }
+    return(tableaulinearise);
+}
+vector<int> grille::etat_tab()
+{   vector<int> tableaulinearise;
+    for (int i = 0; i < 4; i++){
+        for (int j = 0; j < 4; j++){
+           tableaulinearise.push_back(tab[i][j]);
+        }
+        }
+    return(tableaulinearise);
+}
 ostream& operator<<(ostream& sortie, grille& g)
  {
      cout<<endl;
@@ -267,3 +295,4 @@ ostream& operator<<(ostream& sortie, grille& g)
      };
 
 }
+

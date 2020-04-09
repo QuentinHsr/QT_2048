@@ -17,7 +17,8 @@ Window {
         height: 400
         color: "#fcf3e1"
         border.width: 0
-    }
+        focus: true
+
 
     Rectangle {
         id: carre1
@@ -35,10 +36,11 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[0]
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 12
+            focus: true
         }
     }
 
@@ -58,7 +60,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[1]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -81,7 +83,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[2]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -104,7 +106,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[3]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -127,7 +129,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[4]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -150,7 +152,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[5]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -173,7 +175,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[6]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -196,7 +198,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[7]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -219,7 +221,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[8]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -242,7 +244,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[9]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -265,7 +267,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[10]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -288,7 +290,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[11]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -311,7 +313,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[12]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -334,7 +336,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[13]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -357,7 +359,7 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[14]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
@@ -380,13 +382,13 @@ Window {
             y: 8
             width: 44
             height: 44
-            text: qsTr("")
+            text: vueObjetCpt.cptQML[15]
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 12
             horizontalAlignment: Text.AlignHCenter
         }
     }
-
+    }
 }
 
 
