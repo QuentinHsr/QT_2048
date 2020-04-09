@@ -40,7 +40,8 @@ Window {
                 {vueObjetCpt.maj();}
                 break;
             case Qt.Key_R:
-            {vueObjetCpt.}
+            vueObjetCpt.retour();
+                break;
 
 
             }}

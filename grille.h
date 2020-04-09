@@ -21,6 +21,7 @@ class grille : public QObject
        Q_INVOKABLE bool move_down();
         Q_INVOKABLE void initial();
        Q_INVOKABLE void maj();
+        Q_INVOKABLE void retour();
         friend ostream& operator<<(ostream& sortie, grille& D);
         void affiche_cases_vides();
         void calcul_cases_vides();
@@ -35,7 +36,7 @@ class grille : public QObject
                                // cela permet une plus grande simplicité et une meilleur lisibilité du code.
         int a=2;
         vector<vector<int>> cases_vides;
-        vector<short> memoire;
+        vector<vector<vector<int>>> memoire;
 
 
 
