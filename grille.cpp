@@ -29,8 +29,16 @@ void grille::initial()
  int x2 = rand() % 4;
  int y1 = rand() % 4;
  int y2 = rand() % 4;
- tab[x1][y1]=2;
- tab[x2][y2]=2;
+ int val1 = rand() % 6;
+ int val2 = rand() % 6;
+ if(val1==0)
+ {tab[x1][y1]=4;}
+ else
+ {tab[x1][y1]=2;}
+ if(val2==0)
+ {tab[x2][y2]=4;}
+ else
+ {tab[x2][y2]=2;}
 
  for(int i=0; i<4;i++)
  { for(int j=0; j<4; j++)
@@ -56,8 +64,13 @@ void grille::maj()
 
   int i =cases_vides[r][0];
   int j =cases_vides[r][1];
-
-  tab[i][j]=2;
+  int val = rand() % 6;
+  if(val==0)
+  {tab[i][j]=4;}
+  else if(val==1)
+    {tab[i][j]=3;}
+  else
+  {tab[i][j]=2;}
   memoire.push_back(tab);
 emit grilleChanged();
 }
