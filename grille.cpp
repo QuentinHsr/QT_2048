@@ -45,6 +45,7 @@ void grille::initial()
          }
     }
 }
+ memoire.push_back(tab);
  emit grilleChanged();
 }
 
@@ -57,9 +58,15 @@ void grille::maj()
   int j =cases_vides[r][1];
 
   tab[i][j]=2;
+  memoire.push_back(tab);
 emit grilleChanged();
 }
-
+void grille::retour(){
+    vector<vector<int>> tableau = memoire.back();
+    memoire.pop_back();
+    tab = tableau;
+    emit grilleChanged();
+}
 bool grille::move_left()
 {int c = 0;
 bool test = 0;

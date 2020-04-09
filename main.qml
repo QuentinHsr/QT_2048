@@ -39,7 +39,9 @@ Window {
          if(vueObjetCpt.move_down()==1)
          {vueObjetCpt.maj();}
          break;
-
+         case Qt.Key_L:
+         vueObjetCpt.retour();
+         break;
 
          }}
 
