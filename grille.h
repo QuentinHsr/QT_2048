@@ -12,15 +12,17 @@ class grille : public QObject
         explicit grille(QObject *parent = nullptr);
         Q_PROPERTY(QList<QString> grilleQML READ readGrille NOTIFY grilleChanged)
         Q_PROPERTY(QList<QString> couleurQML READ readCouleur NOTIFY grilleChanged)
+        Q_PROPERTY(QList<QString> bordureQML READ readBordure NOTIFY difficultyChanged)
+        QList<QString> readBordure();
         QList<QString> readGrille();
         QList<QString> readCouleur();
         bool est_pleine();
         Q_INVOKABLE bool move_right();
         Q_INVOKABLE bool move_left();
-       Q_INVOKABLE bool move_up();
-       Q_INVOKABLE bool move_down();
+        Q_INVOKABLE bool move_up();
+        Q_INVOKABLE bool move_down();
         Q_INVOKABLE void initial();
-       Q_INVOKABLE void maj();
+        Q_INVOKABLE void maj();
         Q_INVOKABLE void retour();
         Q_INVOKABLE void set_difficulty(int new_d);
         friend ostream& operator<<(ostream& sortie, grille& D);
@@ -28,9 +30,11 @@ class grille : public QObject
         void calcul_cases_vides();
         vector<int> etat_tab();
         int get_difficulty();
+        Q_INVOKABLE bool est_vide();
 
     signals:
         void grilleChanged();
+        void difficultyChanged();
     protected:
         vector<vector<int>> tab;
      // bien que ce ne soit pas le choix le plus optimisé au niveau de l'allocation mémoire,

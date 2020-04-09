@@ -21,7 +21,10 @@ Window {
         Keys.onPressed: {
             switch (event.key) {
             case Qt.Key_P:
+                if(vueObjetCpt.est_vide()==0){
                 vueObjetCpt.initial();
+                }
+
                 break;
             case Qt.Key_Z:
                 if(vueObjetCpt.move_up()==1)
@@ -447,8 +450,8 @@ Window {
 
         Rectangle {
             id: rectangle
-            x: 214
-            y: 465
+            x: 210
+            y: 500
             width: 20
             height: 20
             color: "#edb170"
@@ -470,10 +473,11 @@ Window {
 
         Text {
             id: element1
-            x: 10
-            y: 459
+            x: 17
+            y: 481
             width: 154
-            height: 127
+            height: 18
+            color: "#2f3176"
             text: qsTr("During the game, use Z,Q,S  ")
             padding: 0
             lineHeight: 1.1
@@ -488,6 +492,7 @@ Window {
                 id: element5
                 x: 0
                 y: 69
+                color: "#242786"
                 text: qsTr("Use R to undo.")
                 font.pixelSize: 12
             }
@@ -495,26 +500,28 @@ Window {
 
         Text {
             id: element3
-            x: 10
-            y: 476
+            x: 17
+            y: 500
             width: 99
             height: 14
+            color: "#2c2f87"
             text: qsTr("and D to move UP,")
             font.pixelSize: 12
         }
 
         Text {
             id: element4
-            x: 10
-            y: 491
+            x: 17
+            y: 520
+            color: "#242786"
             text: qsTr("LEFT, DOWN and RIGHT.")
             font.pixelSize: 12
         }
 
         Rectangle {
             id: rectangle1
-            x: 214
-            y: 491
+            x: 210
+            y: 526
             width: 20
             height: 20
             color: "#edb170"
@@ -524,8 +531,8 @@ Window {
 
         Rectangle {
             id: rectangle2
-            x: 190
-            y: 491
+            x: 184
+            y: 526
             width: 20
             height: 20
             color: "#edb170"
@@ -535,8 +542,8 @@ Window {
 
         Rectangle {
             id: rectangle3
-            x: 240
-            y: 491
+            x: 236
+            y: 526
             width: 20
             height: 20
             color: "#edb170"
@@ -556,8 +563,8 @@ Window {
 
         Text {
             id: element6
-            x: 197
-            y: 494
+            x: 191
+            y: 529
             width: 7
             height: 14
             text: qsTr("Q")
@@ -566,16 +573,16 @@ Window {
 
         Text {
             id: element7
-            x: 221
-            y: 494
+            x: 217
+            y: 529
             text: qsTr("S")
             font.pixelSize: 12
         }
 
         Rectangle {
             id: rectangle4
-            x: 9
-            y: 442
+            x: 10
+            y: 471
             width: 272
             height: 4
             color: "#d9883f"
@@ -598,11 +605,12 @@ Window {
             height: 35
             color: "#f1d68e"
             radius: 17.5
+            border.color: "#41b1f1"
+            border.width: vueObjetCpt.bordureQML[0];
             MouseArea{
                  anchors.fill: parent
                  onClicked: {
-                 vueObjetCpt.set_difficulty(0);
-                 bout1.color = "#b4d9ff";
+                 vueObjetCpt.set_difficulty(0)
                  }
             }
 
@@ -624,12 +632,12 @@ Window {
             height: 35
             color: "#e8796c"
             radius: 17.5
+            border.color: "#41b1f1"
+            border.width: vueObjetCpt.bordureQML[1];
             MouseArea{
                  anchors.fill: parent
                  onClicked: {
                  vueObjetCpt.set_difficulty(1);
-
-                 bout2.color = "#b4d9ff";
                  }
             }
             Text {
@@ -639,6 +647,18 @@ Window {
                 text: qsTr("HARD")
                 font.pixelSize: 12
             }
+        }
+
+        Text {
+            id: element11
+            x: 5
+            y: 449
+            width: 280
+            height: 16
+            color: "#2f3176"
+            text: qsTr("Press any of the difficulty button to restart the game")
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: 11
         }
     }
 }

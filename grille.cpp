@@ -79,11 +79,12 @@ emit grilleChanged();
 }
 
 void grille::retour()
-{
-    vector<vector<int>> tableau = memoire.back();
+{   if (memoire.size()>1){
     memoire.pop_back();
+    vector<vector<int>> tableau = memoire.back();
     tab=tableau;
     emit grilleChanged();
+    }
 }
 
 bool grille::move_left()
@@ -395,11 +396,40 @@ void grille::set_difficulty(int new_d)
      }
     memoire.clear();
     emit grilleChanged();
-
+    emit difficultyChanged();
 }
 
 
 int grille::get_difficulty(){
   cout<<d;
   return d;
+}
+
+QList<QString> grille::readBordure(){
+    QList<QString> bordure;
+    if (d==0){
+        bordure.append(QString("3"));
+        bordure.append(QString("0"));
+    }
+    if (d==1){
+        bordure.append(QString("0"));
+        bordure.append(QString("3"));
+    }
+
+    return bordure;
+
+}
+
+bool grille::est_vide(){
+    bool a=0;
+    for(int i=0;i<4;i++){
+        for(int j=0; j<4; j++){
+         if (tab[i][j]!=0){
+             a=1;
+         }
+
+
+}
+}
+    return a;
 }
