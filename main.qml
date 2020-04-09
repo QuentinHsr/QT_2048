@@ -39,6 +39,8 @@ Window {
                 if(vueObjetCpt.move_down()==1)
                 {vueObjetCpt.maj();}
                 break;
+            case Qt.Key_R:
+            {vueObjetCpt.}
 
 
             }}
@@ -122,8 +124,10 @@ Window {
             y: 40
             width: 60
             height: 60
+            color: vueObjetCpt.couleurQML[3]
             radius: 5
             border.width: 2
+
             border.color: "#9a9898"
 
             Text {
