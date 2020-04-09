@@ -282,15 +282,51 @@ QList<QString> grille::readCouleur()
     for (int i = 0; i < 4; i++){
         for (int j = 0; j < 4; j++){
             if(tab[i][j]==0)
-            {tableaulinearise.append(QString("#e4e4e4"));}
+            {tableaulinearise.append(QString("#f9f6f2"));}
             else if(tab[i][j]==2)
-            {tableaulinearise.append(QString("#ece6cf"));}
+            {tableaulinearise.append(QString("#eee4da"));}
             else if(tab[i][j]==4)
-            {tableaulinearise.append(QString("#e4d9ac"));}
+            {tableaulinearise.append(QString("#ede0c8"));}
             else if(tab[i][j]==8)
-            {tableaulinearise.append(QString("#e9cd5a"));}
+            {tableaulinearise.append(QString("#f2b179"));}
             else if(tab[i][j]==16)
-            {tableaulinearise.append(QString("#f7ea2e"));}
+            {tableaulinearise.append(QString("#f59563"));}
+            else if(tab[i][j]==32)
+            {tableaulinearise.append(QString("#f67c5f"));}
+            else if(tab[i][j]==64)
+            {tableaulinearise.append(QString("#f65e3b"));}
+            else if(tab[i][j]==128)
+            {tableaulinearise.append(QString("#edcf72"));}
+            else if(tab[i][j]==256)
+            {tableaulinearise.append(QString("#edcc61"));}
+            else if(tab[i][j]==512)
+            {tableaulinearise.append(QString("#edc850"));}
+            else if(tab[i][j]==1024)
+            {tableaulinearise.append(QString("#edc53f"));}
+            else if(tab[i][j]==2048)
+            {tableaulinearise.append(QString("#edc22e"));}
+            else if(tab[i][j]==3)
+            {tableaulinearise.append(QString("#b4d9ff"));}
+            else if(tab[i][j]==6)
+            {tableaulinearise.append(QString("#919ae9"));}
+            else if(tab[i][j]==12)
+            {tableaulinearise.append(QString("#9d91e9"));}
+            else if(tab[i][j]==24)
+            {tableaulinearise.append(QString("#b691e9"));}
+            else if(tab[i][j]==48)
+            {tableaulinearise.append(QString("#d697ee"));}
+            else if(tab[i][j]==96)
+            {tableaulinearise.append(QString("#ff9cf7"));}
+            else if(tab[i][j]==192)
+            {tableaulinearise.append(QString("#ff5697"));}
+            else if(tab[i][j]==384)
+            {tableaulinearise.append(QString("#f46f8b"));}
+            else if(tab[i][j]==1536)
+            {tableaulinearise.append(QString("#dc546f"));}
+            else if(tab[i][j]==3072)
+            {tableaulinearise.append(QString("#fa3f49"));}
+
+
 
         }
         }
