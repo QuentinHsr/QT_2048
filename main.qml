@@ -22,28 +22,37 @@ Window {
             switch (event.key) {
             case Qt.Key_P:
                 if(vueObjetCpt.est_vide()==0){
-                vueObjetCpt.initial();
+                    vueObjetCpt.initial();
                 }
 
                 break;
+
             case Qt.Key_Z:
+                if (vueObjetCpt.get_resultat()!=1){
                 if(vueObjetCpt.move_up()==1)
                 {vueObjetCpt.maj();}
+                }
                 break;
             case Qt.Key_Q:
+                if (vueObjetCpt.get_resultat()!=1){
                 if(vueObjetCpt.move_left()==1)
                 {vueObjetCpt.maj();}
+                }
                 break;
             case Qt.Key_D:
+                if (vueObjetCpt.get_resultat()!=1){
                 if(vueObjetCpt.move_right()==1)
                 {vueObjetCpt.maj();}
+                }
                 break;
             case Qt.Key_S:
+                if (vueObjetCpt.get_resultat()!=1){
                 if(vueObjetCpt.move_down()==1)
                 {vueObjetCpt.maj();}
+                }
                 break;
             case Qt.Key_R:
-            vueObjetCpt.retour();
+                vueObjetCpt.retour();
                 break;
 
 
@@ -608,10 +617,10 @@ Window {
             border.color: "#41b1f1"
             border.width: vueObjetCpt.bordureQML[0];
             MouseArea{
-                 anchors.fill: parent
-                 onClicked: {
-                 vueObjetCpt.set_difficulty(0)
-                 }
+                anchors.fill: parent
+                onClicked: {
+                    vueObjetCpt.set_difficulty(0)
+                }
             }
 
             Text {
@@ -635,10 +644,10 @@ Window {
             border.color: "#41b1f1"
             border.width: vueObjetCpt.bordureQML[1];
             MouseArea{
-                 anchors.fill: parent
-                 onClicked: {
-                 vueObjetCpt.set_difficulty(1);
-                 }
+                anchors.fill: parent
+                onClicked: {
+                    vueObjetCpt.set_difficulty(1);
+                }
             }
             Text {
                 id: element10
@@ -660,7 +669,38 @@ Window {
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 11
         }
+
+
+        Rectangle {
+            id: rectangle6
+            x: 56
+            y: 143
+            visible: vueObjetCpt.fin_partieQML_2;
+            width: 190
+            height: 64
+            color: "#faf8f9"
+            radius: 7
+            border.width: 3
+            border.color: "#7b7b7b"
+
+            Text {
+
+                id: element12
+                x: 23
+                y: 19
+                width: 144
+                height: 50
+                color: "#e65514"
+                text: vueObjetCpt.fin_partieQML;
+                horizontalAlignment: Text.AlignHCenter
+                font.family: "Tahoma"
+                z: 11
+                transformOrigin: Item.Center
+                styleColor: "#d0bcbc"
+                font.pixelSize: 20
+
+            }
+        }
     }
 }
-
 

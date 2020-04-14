@@ -20,6 +20,7 @@ grille::grille(QObject *parent) : QObject(parent)
         tab.push_back(colonne);
     }
     emit grilleChanged();
+    emit endgame();
 }
 
 void grille::initial()
@@ -74,7 +75,13 @@ void grille::maj()
   else
   {tab[i][j]=2;}
   memoire.push_back(tab);
-emit grilleChanged();
+  emit grilleChanged();
+  if (estperdu() and resultat!=1){
+     resultat =2 ;
+     emit endgame();
+
+  }
+
 
 }
 
@@ -84,6 +91,8 @@ void grille::retour()
     vector<vector<int>> tableau = memoire.back();
     tab=tableau;
     emit grilleChanged();
+    resultat=0;
+    emit endgame();
     }
 }
 
@@ -117,6 +126,10 @@ for (int i=0;i<4;i++)
         if(tab[i][j]==tab[i][j+1] and tab[i][j]!=0)
             {   int v2=tab[i][j];
                 a_bouge=1;
+                if (v2==1024){
+                    resultat=1;
+                    emit endgame();
+                }
                 tab[i][j] = 2*v2;
                 tab[i][j+1] = 0;
               for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
@@ -160,6 +173,10 @@ for (int i=0;i<4;i++)
         if(tab[j][i]==tab[j+1][i] and tab[j][i]!=0)
             {   int v2=tab[j][i];
                 a_bouge= 1;
+                if (v2==1024){
+                    resultat=1;
+                    emit endgame();
+                }
                 tab[j][i] = 2*v2;
                 tab[j+1][i] = 0;
               for(int k=j+1;k<3;k++) //après la fusion on redéplace pour combler le vide
@@ -204,6 +221,10 @@ for (int i=0;i<4;i++)
         if(tab[j][i]==tab[j-1][i] and tab[j][i]!=0)
             {   int v2=tab[j][i];
                 a_bouge= 1;
+                if (v2==1024){
+                    resultat=1;
+                    emit endgame();
+                }
                 tab[j-1][i] = 0;
                 tab[j][i] =2*v2;
               for(int k=j-1;k>0;k--) //après la fusion on redéplace pour combler le vide
@@ -248,6 +269,10 @@ for (int i=0;i<4;i++)
         if(tab[i][j]==tab[i][j-1] and tab[i][j]!=0)
             {   int v2=tab[i][j];
                 a_bouge= 1;
+                if (v2==1024){
+                    resultat=1;
+                    emit endgame();
+                }
                 tab[i][j-1] = 0;
                 tab[i][j] =2*v2;
               for(int k=j-1;k>0;k--) //après la fusion on redéplace pour combler le vide
@@ -395,6 +420,8 @@ void grille::set_difficulty(int new_d)
         }
      }
     memoire.clear();
+    resultat = 0;
+    emit endgame();
     emit grilleChanged();
     emit difficultyChanged();
 }
@@ -432,4 +459,75 @@ bool grille::est_vide(){
 }
 }
     return a;
+}
+
+QString grille::ecranfin(){
+    QString ecran;
+    if (resultat==1){
+        ecran="C'est gagné :) !";
+    }
+    if (resultat==2){
+        ecran="Perdu :( !";
+    }
+
+   return ecran;
+}
+
+bool grille::ecranfin_2(){
+     bool b;
+     if (resultat==0){
+         b=false;
+     }
+     if (resultat==1){
+         b=true;
+     }
+     if (resultat==2){
+         b=true;
+     }
+
+
+     return b;
+}
+
+bool grille::estperdu(){
+    bool sortie = true;
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+         if (tab[i][j]==0){
+             sortie=false;
+         }
+         if (j<3){
+             if (tab[i][j]==tab[i][j+1]){
+             sortie=false;
+         }
+         }
+         if (j>0){
+             if (tab[i][j]==tab[i][j-1]){
+             sortie=false;
+         }
+         }
+         if (i>0){
+             if (tab[i][j]==tab[i-1][j]){
+             sortie=false;
+         }
+         }
+
+         if (i<3){
+             if (tab[i][j]==tab[i+1][j]){
+             sortie=false;
+         }
+         }
+
+
+
+
+    }
+    }
+
+
+    return sortie;
+}
+
+int grille::get_resultat(){
+    return resultat;
 }
